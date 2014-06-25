@@ -22,6 +22,13 @@ class TestNetflix (TestCase) :
         file_path = "/u/mukund/netflix-tests/eros-movie_cache.json"
         j = netflix_read_json(key, file_path)
         self.assertEqual(j,["2.5", "0.69"])
+ 
+    def test_read_json_2 (self) :
+        key = "2043"
+        file_path = "/u/mukund/netflix-tests/rbrooks-movie_average_rating.json"
+        j = netflix_read_json(key, file_path)
+        self.assertEqual(j, 3.7776648456358783)
+
 
     # -----
     # write
@@ -51,12 +58,12 @@ class TestNetflix (TestCase) :
 
 
     def test_is_movie (self) :
-        s = "4:"
+        s = "4:\n"
         j = netflix_is_movie(s)
         self.assertEqual(j, True)
 
     def test_is_movie_1 (self) :
-        s = "24"
+        s = "24\n"
         j = netflix_is_movie(s)
         self.assertEqual(j, False)
 
@@ -65,10 +72,13 @@ class TestNetflix (TestCase) :
     # -----
 
     def test_solve (self) :
-        r = StringIO("2043:\n1417435\n2312054\n462685\n10851:\n1417435\n2312054\n462685")
-        w = StringIO()
+        r = StringIO("2043:\n1417435\n2312054\n462685\n")
+        #10851:\n1417435\n2312054\n462685")
+        w = StringIO("")
         netflix_solve(r, w)
-        self.assertEqual(w.getvalue(), "2043:\n3.4\n4.1\n1.9\n10851:\n4.3\n1.4\n2.8")
+        self.assertEqual(w.getvalue(), "2043:\n3.4\n4.1\n1.9\n")
+
+#        10851:\n4.3\n1.4\n2.8")
 
 main()
 
