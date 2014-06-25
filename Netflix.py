@@ -49,6 +49,8 @@ def netflix_write (w, v) :
         json.dump(data, outfile)
     outfile.close()
     """
+    v = str(v)
+    v = v.strip('\n ')
     w.write(str(v) + "\n") 
 
 def rmse_zip_reduce (a, p) :
@@ -94,7 +96,7 @@ def netflix_solve (r, w) :
         a = netflix_read(r)
         if not a :
             return         
-        a = str(a)
+    #    a = str(a)
         if netflix_is_movie(a) :
             movie = a.strip(':\n ')
             netflix_write(w, a)
