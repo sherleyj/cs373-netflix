@@ -43,12 +43,12 @@ ansCacheDic = netflix_load_json(
 "/u/mukund/netflix-tests/frankc-answer_cache.json")
 
 
-def rmse (p, a) :
-    global rmseSum
-    global rmseCount
-    rmseElem = sqre_diff(p, a)
-    rmseSum += rmseElem
-    rmseCount += 1 
+#def rmse (p, a) :
+#    global rmseSum
+#    global rmseCount
+#    rmseElem = sqre_diff(p, a)
+#    rmseSum += rmseElem
+#    rmseCount += 1 
 
 
 def sqre_diff (x, y) :
@@ -96,7 +96,13 @@ def netflix_eval (customer, movie) :
     predRating = round((2*customerAvg + 3*movieAvg + customerAvgDecade)/6, 1)    
     
     actualRating = ansCacheDic[movie][customer]
-    rmse(actualRating, predRating)   
+#    rmse(actualRating, predRating)   
+    global rmseSum
+    global rmseCount
+    rmseElem = sqre_diff(predRating, actualRating)
+    rmseSum += rmseElem
+    rmseCount += 1
+
 
     return predRating
 
