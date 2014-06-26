@@ -26,7 +26,6 @@ def netflix_load_json (file_path) :
     
     #return keyValue
 
-
 customerAvgDic = netflix_load_json( 
 "/u/mukund/netflix-tests/bryan-customer_cache.json")
 
@@ -103,9 +102,7 @@ def netflix_eval (customer, movie) :
     rmseSum += rmseElem
     rmseCount += 1
 
-
     return predRating
-
 
 def netflix_solve (r, w) :
     """
