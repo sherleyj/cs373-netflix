@@ -33,6 +33,12 @@ customerAvgDic = netflix_load_json(
 movieAvgDic = netflix_load_json( 
 "/u/mukund/netflix-tests/rbrooks-movie_average_rating.json")
 
+customerAvgDecadeDic = netflix_load_json(
+"/u/mukund/netflix-tests/ahsu-cust_by_decade.json")
+
+movieDecadeDic = netflix_load_json(
+"/u/mukund/netflix-tests/isabella-movie_decades_cache.json")
+
 ansCacheDic = netflix_load_json(
 "/u/mukund/netflix-tests/frankc-answer_cache.json")
 
@@ -84,7 +90,10 @@ def netflix_eval (customer, movie) :
     """
     customerAvg = customerAvgDic[customer]
     movieAvg = movieAvgDic[movie]       
-    predRating = round((customerAvg + movieAvg + 3.604289964420661)/3, 1)
+    movieDecade = movieDecadeDic[movie]     # made in 1993, return 1990
+    customerAvgDecade = customerAvgDecadeDic[customer][movieDecade]
+
+    predRating = round((2*customerAvg + 3*movieAvg + customerAvgDecade)/6, 1)    
     
     actualRating = ansCacheDic[movie][customer]
     rmse(actualRating, predRating)   
