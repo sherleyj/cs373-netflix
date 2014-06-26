@@ -1,30 +1,53 @@
 #!/usr/bin/env python3
 
+rmseSum = 0
+rmseCount = 0
+
 """
     -input: list of one movie id followed by several cutomer ids
     -must predict that movie's rating for each customer.
 """
-import json, sys
+
+import json
+import sys
 from io      import StringIO
 from functools import reduce
 from math      import sqrt
-from sys       import version
-from time      import clock
+
+def netflix_load_json (file_path) :
+    """
+    read  json file
+    """
+    jsonFile = open(file_path, 'r')
+    jsonDict = json.loads(jsonFile.read())
+    return jsonDict
+    #keyValue = jsonDict[key]
+    #jsonFile.close()
+    
+    #return keyValue
+
+
+customerAvgDic = netflix_load_json( 
+"/u/mukund/netflix-tests/bryan-customer_cache.json")
+
+movieAvgDic = netflix_load_json( 
+"/u/mukund/netflix-tests/rbrooks-movie_average_rating.json")
+
+ansCacheDic = netflix_load_json(
+"/u/mukund/netflix-tests/frankc-answer_cache.json")
+
+
+def rmse (p, a) :
+    global rmseSum
+    global rmseCount
+    rmseElem = sqre_diff(p, a)
+    rmseSum += rmseElem
+    rmseCount += 1 
+
 
 def sqre_diff (x, y) :
     return (x - y) ** 2
 
-
-def netflix_read_json (key, file_path) :
-    """
-    read in key value from json file
-    """
-    jsonFile = open(file_path, 'r')
-    jsonDict = json.loads(jsonFile.read())
-    keyValue = jsonDict[key]
-    jsonFile.close()
-    
-    return keyValue
 
 def netflix_read (r) :
     """
@@ -37,8 +60,9 @@ def netflix_read (r) :
         return []
     return s
 
-def netflix_is_movie (s) :
-    return s.endswith(':\n')
+
+# def netflix_is_movie (s) :
+#     return s.endswith(':\n')
 
 
 def netflix_write (w, v) :
@@ -53,34 +77,19 @@ def netflix_write (w, v) :
     v = v.strip('\n ')
     w.write(str(v) + "\n") 
 
-def rmse_zip_reduce (a, p) :
-    """
-    compute root mean square deviation
-    O(1) in space
-    O(n) in time
-    """
-    assert(hasattr(a, "__len__"))
-    assert(hasattr(p, "__len__"))
-    assert(hasattr(a, "__iter__"))
-    assert(hasattr(p, "__iter__"))
-    assert(len(a) == len(p))
-    s = len(a)
-    v = sum(map(sqre_diff, a, p))
-    return sqrt(v / s)
-
-
 def netflix_eval (customer, movie) :
     """
     compute prediction for what a customer will
     rate a given movie
-    """        
-    customer_avg  = netflix_read_json(customer, "/u/mukund/netflix-tests/bryan-customer_cache.json")
-    movie_avg = netflix_read_json(movie, "/u/mukund/netflix-tests/rbrooks-movie_average_rating.json")    
-   # movie_avg =3.5     
-
-    p_movie_rating = int(customer_avg + movie_avg)/2
+    """
+    customerAvg = customerAvgDic[customer]
+    movieAvg = movieAvgDic[movie]       
+    predRating = (customerAvg + movieAvg + 3.604289964420661)/3
     
-    return p_movie_rating
+    actualRating = ansCacheDic[movie][customer]
+    rmse(actualRating, predRating)   
+
+    return predRating
 
 
 def netflix_solve (r, w) :
@@ -97,11 +106,13 @@ def netflix_solve (r, w) :
         if not a :
             return         
     #    a = str(a)
-        if netflix_is_movie(a) :
+        if a.endswith(':\n') :
             movie = a.strip(':\n ')
             netflix_write(w, a)
         else :
             customer = a.strip('\n')
             rating = netflix_eval (customer, movie)
             netflix_write(w, rating)
-      
+    w.write("RMSE: ")        
+    netflix_write(w, sqrt(rmseSum/rmseCount)) 
+
