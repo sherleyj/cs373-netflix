@@ -84,7 +84,7 @@ def netflix_eval (customer, movie) :
     """
     customerAvg = customerAvgDic[customer]
     movieAvg = movieAvgDic[movie]       
-    predRating = (customerAvg + movieAvg + 3.604289964420661)/3
+    predRating = round((customerAvg + movieAvg + 3.604289964420661)/3, 1)
     
     actualRating = ansCacheDic[movie][customer]
     rmse(actualRating, predRating)   
@@ -104,8 +104,10 @@ def netflix_solve (r, w) :
 
         a = netflix_read(r)
         if not a :
-            return         
-    #    a = str(a)
+            w.write("RMSE: ")
+            netflix_write(w, round(sqrt(rmseSum/rmseCount), 4) )
+            return
+        #a = str(a)
         if a.endswith(':\n') :
             movie = a.strip(':\n ')
             netflix_write(w, a)
@@ -113,6 +115,5 @@ def netflix_solve (r, w) :
             customer = a.strip('\n')
             rating = netflix_eval (customer, movie)
             netflix_write(w, rating)
-    w.write("RMSE: ")        
-    netflix_write(w, sqrt(rmseSum/rmseCount)) 
+
 
