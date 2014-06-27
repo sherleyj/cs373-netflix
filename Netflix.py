@@ -68,10 +68,6 @@ def netflix_read (r) :
 def netflix_write (w, v) :
     """
     write to json file
-    
-    with open(file_path, 'w') as outfile:
-        json.dump(data, outfile)
-    outfile.close()
     """
     v = str(v)
     v = v.strip('\n ')
