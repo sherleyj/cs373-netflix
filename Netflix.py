@@ -2,6 +2,7 @@
 
 rmseSum = 0
 rmseCount = 0
+openFiles = []
 
 """
     -input: list of one movie id followed by several cutomer ids
@@ -14,12 +15,14 @@ from io      import StringIO
 from functools import reduce
 from math      import sqrt
 
+
 def netflix_load_json (file_path) :
     """
     read  json file
     """
     jsonFile = open(file_path, 'r')
     jsonDict = json.loads(jsonFile.read())
+    openFiles.append(jsonFile)
     return jsonDict
     #keyValue = jsonDict[key]
     #jsonFile.close()
@@ -40,14 +43,6 @@ movieDecadeDic = netflix_load_json(
 
 ansCacheDic = netflix_load_json(
 "/u/mukund/netflix-tests/frankc-answer_cache.json")
-
-
-#def rmse (p, a) :
-#    global rmseSum
-#    global rmseCount
-#    rmseElem = sqre_diff(p, a)
-#    rmseSum += rmseElem
-#    rmseCount += 1 
 
 
 def sqre_diff (x, y) :
@@ -118,6 +113,10 @@ def netflix_solve (r, w) :
         if not a :
             w.write("RMSE: ")
             netflix_write(w, round(sqrt(rmseSum/rmseCount), 4) )
+            s = len(openFiles)
+            for i in range(s) :
+                openFiles[i].close()
+            # close files
             return
         #a = str(a)
         if a.endswith(':\n') :
