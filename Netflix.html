@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Netflix</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Netflix</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/sj8346/cs373/Netflix/Netflix.py">/v/filer4b/v38q001/sj8346/cs373/Netflix/Netflix.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-netflix_eval"><strong>netflix_eval</strong></a>(customer, movie)</dt><dd><tt>compute&nbsp;prediction&nbsp;for&nbsp;what&nbsp;a&nbsp;customer&nbsp;will<br>
+rate&nbsp;a&nbsp;given&nbsp;movie</tt></dd></dl>
+ <dl><dt><a name="-netflix_load_json"><strong>netflix_load_json</strong></a>(file_path)</dt><dd><tt>read&nbsp;&nbsp;json&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-netflix_read"><strong>netflix_read</strong></a>(r)</dt><dd><tt>r&nbsp;is&nbsp;a&nbsp;reader,&nbsp;read&nbsp;a&nbsp;line&nbsp;containing&nbsp;<br>
+on&nbsp;int&nbsp;and&nbsp;return&nbsp;it.&nbsp;If&nbsp;movieID,&nbsp;<br>
+removes&nbsp;the&nbsp;':'&nbsp;at&nbsp;the&nbsp;end.</tt></dd></dl>
+ <dl><dt><a name="-netflix_solve"><strong>netflix_solve</strong></a>(r, w)</dt><dd><tt>r&nbsp;is&nbsp;input&nbsp;file&nbsp;with&nbsp;movie&nbsp;ID,&nbsp;followed&nbsp;by&nbsp;customers<br>
+that&nbsp;rated&nbsp;that&nbsp;movie.</tt></dd></dl>
+ <dl><dt><a name="-netflix_write"><strong>netflix_write</strong></a>(w, v)</dt><dd><tt>write&nbsp;to&nbsp;json&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-reduce"><strong>reduce</strong></a>(...)</dt><dd><tt><a href="#-reduce">reduce</a>(function,&nbsp;sequence[,&nbsp;initial])&nbsp;-&gt;&nbsp;value<br>
+&nbsp;<br>
+Apply&nbsp;a&nbsp;function&nbsp;of&nbsp;two&nbsp;arguments&nbsp;cumulatively&nbsp;to&nbsp;the&nbsp;items&nbsp;of&nbsp;a&nbsp;sequence,<br>
+from&nbsp;left&nbsp;to&nbsp;right,&nbsp;so&nbsp;as&nbsp;to&nbsp;reduce&nbsp;the&nbsp;sequence&nbsp;to&nbsp;a&nbsp;single&nbsp;value.<br>
+For&nbsp;example,&nbsp;<a href="#-reduce">reduce</a>(lambda&nbsp;x,&nbsp;y:&nbsp;x+y,&nbsp;[1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5])&nbsp;calculates<br>
+((((1+2)+3)+4)+5).&nbsp;&nbsp;If&nbsp;initial&nbsp;is&nbsp;present,&nbsp;it&nbsp;is&nbsp;placed&nbsp;before&nbsp;the&nbsp;items<br>
+of&nbsp;the&nbsp;sequence&nbsp;in&nbsp;the&nbsp;calculation,&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;default&nbsp;when&nbsp;the<br>
+sequence&nbsp;is&nbsp;empty.</tt></dd></dl>
+ <dl><dt><a name="-sqre_diff"><strong>sqre_diff</strong></a>(x, y)</dt></dl>
+ <dl><dt><a name="-sqrt"><strong>sqrt</strong></a>(...)</dt><dd><tt><a href="#-sqrt">sqrt</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;square&nbsp;root&nbsp;of&nbsp;x.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ansCacheDic</strong> = {u'1': {u'1027056': 3, u'1059319': 3, u'1149588': 4, u'1283744': 3, u'1394012': 5, u'1406595': 4, u'14756': 4, u'1682104': 4, u'1772839': 5, u'1774623': 4, ...}, u'10': {u'1531863': 3, u'1952305': 3}, u'1000': {u'1002296': 5, u'100291': 2, u'1010534': 2, u'1196779': 4, u'1580442': 3, u'1861759': 5, u'1900790': 4, u'1959111': 5, u'1960212': 2, u'2251189': 3, ...}, u'10000': {u'200206': 5, u'523108': 4}, u'10001': {u'143866': 5, u'1474804': 4, u'1959883': 5, u'220050': 4, u'2305771': 5, u'2350428': 5, u'2417258': 5, u'2570808': 5, u'2609496': 4, u'262828': 4, ...}, u'10002': {u'1213181': 4, u'1450941': 5, u'2581993': 5, u'308502': 5}, u'10003': {u'1515111': 3}, u'10004': {u'1141242': 5, u'1186407': 4, u'119309': 5, u'1257912': 3, u'1262711': 3, u'1263375': 5, u'1270334': 5, u'1291600': 4, u'129495': 4, u'1648424': 5, ...}, u'10005': {u'1892654': 4, u'254775': 1, u'469365': 5, u'793736': 4, u'926698': 3}, u'10006': {u'1093333': 4, u'1534853': 5, u'1632583': 5, u'1982605': 5}, ...}<br>
+<strong>customerAvgDecadeDic</strong> = {u'10': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 2.0, u'1950': 3.5, u'1960': 3.25, u'1970': 3.857142857142857, u'1980': 3.3333333333333335, ...}, u'100000': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 0, u'1970': 0, u'1980': 5.0, ...}, u'1000004': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 0, u'1970': 0, u'1980': 2.3333333333333335, ...}, u'1000027': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 5.0, u'1970': 5.0, u'1980': 4.444444444444445, ...}, u'1000033': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 3.0, u'1930': 4.0, u'1940': 4.0, u'1950': 4.25, u'1960': 3.76, u'1970': 3.1923076923076925, u'1980': 3.372093023255814, ...}, u'1000035': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 5.0, u'1960': 0, u'1970': 0, u'1980': 5.0, ...}, u'1000038': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 0, u'1970': 5.0, u'1980': 4.5, ...}, u'1000051': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 0, u'1970': 0, u'1980': 0, ...}, u'1000053': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 0, u'1970': 0, u'1980': 0, ...}, u'1000057': {u'1890': 0, u'1900': 0, u'1910': 0, u'1920': 0, u'1930': 0, u'1940': 0, u'1950': 0, u'1960': 0, u'1970': 0, u'1980': 3.0, ...}, ...}<br>
+<strong>customerAvgDic</strong> = {u'10': 3.39, u'100000': 4.27, u'1000004': 4.5, u'1000027': 4.45, u'1000033': 3.29, u'1000035': 4.41, u'1000038': 3.67, u'1000051': 3.06, u'1000053': 4.88, u'1000057': 2.85, ...}<br>
+<strong>movieAvgDic</strong> = {u'1': 3.749542961608775, u'10': 3.180722891566265, u'100': 2.6538461538461537, u'1000': 3.2842105263157895, u'10000': 2.902325581395349, u'10001': 3.8037974683544302, u'10002': 3.4405487804878048, u'10003': 2.467289719626168, u'10004': 4.208903257896046, u'10005': 3.2453531598513012, ...}<br>
+<strong>movieDecadeDic</strong> = {u'1': u'2000', u'10': u'2000', u'100': u'1990', u'1000': u'2000', u'10000': u'1990', u'10001': u'1990', u'10002': u'1930', u'10003': u'1980', u'10004': u'1990', u'10005': u'2000', ...}<br>
+<strong>openFiles</strong> = [&lt;open file '/u/mukund/netflix-tests/bryan-customer_cache.json', mode 'r'&gt;, &lt;open file '/u/mukund/netflix-tests/rbrooks-movie_average_rating.json', mode 'r'&gt;, &lt;open file '/u/mukund/netflix-tests/ahsu-cust_by_decade.json', mode 'r'&gt;, &lt;open file '/u/mukund/netflix-tests/isabella-movie_decades_cache.json', mode 'r'&gt;, &lt;open file '/u/mukund/netflix-tests/frankc-answer_cache.json', mode 'r'&gt;]<br>
+<strong>rmseCount</strong> = 0<br>
+<strong>rmseSum</strong> = 0</td></tr></table>
+</body></html>

@@ -1,0 +1,77 @@
+commit 425dd5e9247eebec7f117749f91e9789b88c5175
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 19:46:24 2014 -0500
+
+    fixes #17
+
+commit 8c8c5a939d04ccc2a39d85f75d20392be0579a2f
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 19:38:48 2014 -0500
+
+    modified to be able to close files
+
+commit 15c295aef6792325d54409566454e780afb4ad97
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 18:58:49 2014 -0500
+
+    fixes #15
+
+commit 864fecbc728b8500cd0a1fb669a60d1fd9a82acd
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 17:05:46 2014 -0500
+
+    fixes #4, created 1000 lines of acceptance tests from probe.txt
+
+commit 8d2f2a51618f615be3fa4b469d824a870f2457a2
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 09:25:11 2014 -0500
+
+    fixes #8, got below 1 rmse
+
+commit bede2afbd68ba75a2e98e978dc82e0ff63d8f1f4
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 01:28:46 2014 -0500
+
+    fixes #14
+
+commit d118699849b32961202e463dac4325ec2d896868
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Thu Jun 26 01:05:18 2014 -0500
+
+    fixes #13
+
+commit ef4b9c51cc979c57f3c8d962a544607b9c6f0fa3
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Wed Jun 25 15:38:34 2014 -0500
+
+    prints output correctly now
+
+commit ade84c48db5aef18f08f2bed84b61ab4be9dd00d
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Wed Jun 25 15:31:10 2014 -0500
+
+    fixes #12
+
+commit eccf3d90d76f02157ba578f815166e36e3cad6ef
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Wed Jun 25 12:06:59 2014 -0500
+
+    fixes #3 mostly, still need to add more and modified all functions
+
+commit dd045719c26d9c9d9e939bc2233e36bb085fc578
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Fri Jun 20 20:38:16 2014 -0500
+
+    fixes #1
+
+commit 45281bb2aec5ddee8c683832a28c523174c17111
+Author: Sherley Jones <sherleyjones@utexas.edu>
+Date:   Fri Jun 20 11:47:25 2014 -0500
+
+    downloaded netflix files
+
+commit 83bbc495be6fcdfd2054fc787335ac0081ee118c
+Author: sherley91 <sherleyjones@utexas.edu>
+Date:   Fri Jun 20 11:28:52 2014 -0500
+
+    Initial commit
